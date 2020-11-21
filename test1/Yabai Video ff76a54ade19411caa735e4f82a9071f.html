@@ -1,0 +1,1884 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Yabai Video</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8da3b829-872d-432f-ac43-181b7ff628fc" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎬</span></div><h1 class="page-title">Yabai Video</h1></header><div class="page-body"><hr id="24a4586f-15ed-4160-9441-b4d899cfa9cb"/><blockquote id="db747058-9a51-4cd3-befd-ddba1cbfa21e" class="">A tiling window manager for macOS based on binary space partitioning.</blockquote><p id="bf73571f-ad36-416e-a328-17d7f360ae17" class="">
+</p><ul id="23cbe6f2-3262-4da0-98e2-e1fc24b903c6" class="toggle"><li><details open=""><summary>What and Why?</summary><ul id="df2af32b-0500-456c-bb91-576027d64a1f" class="toggle"><li><details open=""><summary>What is Yabai?</summary><p id="d872b79b-b91c-485b-9bc0-869b60f649f8" class="">The primary function of yabai is tiling window management; automatically modifying your window layout using a binary space partitioning algorithm to allow you to focus on the content of your windows without distractions. Additional features of yabai include focus-follows-mouse, disabling animations for switching spaces, creating spaces past the limit of 16 spaces, and much more.</p></details></li></ul><ul id="fa2e4f53-d7d6-4250-a2d0-023cbfdf1004" class="toggle"><li><details open=""><summary>Why use Yabai?</summary><ol id="0220de73-0e72-45f7-a882-089a8283bff4" class="numbered-list" start="1"><li>less thing to have to think about. Work faster. Just works. It seems kind of dumb the old way after you&#x27;ve done it this way</li></ol><ol id="dccfb909-44ee-4e50-bc5a-ee06959838bb" class="numbered-list" start="2"><li>lets look at a demo. </li></ol><ol id="1a274b7f-fcec-494f-b88a-34c7d1dca169" class="numbered-list" start="3"><li>First, no window manager. (resizing boring)</li></ol><ol id="6cf80e66-c52d-44bb-8dad-ecc69f312ae3" class="numbered-list" start="4"><li>Now manual window manager like magnet. (snapping side to side and shortcuts)</li></ol><ol id="b9604fe7-58be-43ba-80af-e7ba8f7ae3ad" class="numbered-list" start="5"><li>Now a automatic tiling window manager line Yabai. (epic*)</li></ol></details></li></ul><ul id="9dd05c92-f892-4e50-b451-43e4d7ff1b41" class="toggle"><li><details open=""><summary>What can it do?</summary><ul id="a6408b11-723e-4129-aa6e-bb194ba967ad" class="toggle"><li><details open=""><summary>Check the man pages</summary><pre id="ee1d3bf8-4b10-4234-a144-c1c4c898d928" class="code"><code># A short and concise overview of options available.
+man yabai</code></pre></details></li></ul></details></li></ul></details></li></ul><ul id="b3bd7769-f4dd-41b7-8711-46a171e1b21c" class="toggle"><li><details open=""><summary>How to Install</summary><ul id="a512a1af-26a5-4d0e-ad60-e09e8e7949c4" class="toggle"><li><details open=""><summary>To SIP or not to SIP?</summary><ul id="1554ced7-798d-40ba-a7e0-de48c800f687" class="toggle"><li><details open=""><summary>Why?</summary><p id="e1c7824e-01ff-4306-86e7-cbaa7805b5c9" class=""><strong>The following features of Yabai require </strong><code><strong>System Integrity Protection</strong></code><strong> to be (partially) disabled:</strong></p><ul id="10c3fd6f-670b-49e2-9e7b-1388d8f76879" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">focus/create/destroy space without animation</span></li></ul><ul id="f1cdb90c-4e6a-44b9-a294-bf45f88dc174" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">move space (and its windows) left, right or to another display</span></li></ul><ul id="9c4fcf8b-3912-48d2-815e-24b96cbb8be5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">remove window shadows</span></li></ul><ul id="8fc86bb9-09fb-4a3e-9f5d-141a302893e0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">enable window transparency</span></li></ul><ul id="f25eee28-3b68-4cc2-b6e1-0f2d3f89cc7b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">control window layers (make windows appear topmost)</span></li></ul><ul id="28aab611-6c21-45dd-8612-13686915837f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">sticky windows (make windows appear on all spaces)</span></li></ul><ul id="36008b4e-0b5a-4b61-82b1-468660644290" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">move window by clicking anywhere in its frame</span></li></ul><ul id="3be45ed9-8023-4600-9220-43cabdc5b0e6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">toggle picture-in-picture for any given window</span></li></ul><ul id="97863b6c-7e33-4617-9f2c-b03a2e3a0162" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">border for focused and inactive windows</span></li></ul><hr id="5d29f9aa-6e01-4a3c-8825-c820400ebb41"/><p id="61f2a67f-73ab-42ef-b3d2-c1cfb5d89130" class="">What I care about...</p><ul id="04cc612a-b6c5-4633-9ad6-a3c9c3cfcdfe" class="bulleted-list"><li>With sip<ul id="7e7839d1-322d-44e1-afc7-0be254d8aedc" class="bulleted-list"><li>Cannot focus a space : <code>yabai -m space --focus 4</code></li></ul><ul id="17be83f0-a337-47d2-85d8-2bc9ecd6e916" class="bulleted-list"><li>not non animation space switching</li></ul><ul id="df63efd6-05b5-4d2f-a409-c1f58a64460b" class="bulleted-list"><li>no limelight built in :(</li></ul><ul id="a16c6862-5193-4821-9586-990693a7cf5b" class="bulleted-list"><li>no top window (sticky=on)</li></ul></li></ul><ul id="8b588904-8de6-4d77-8198-39f65c1eafff" class="bulleted-list"><li>Without sip<ul id="8ea2c320-914e-48cf-9b94-d770958cc9f9" class="bulleted-list"><li>Everything </li></ul></li></ul><hr id="bc18263c-8440-49e5-be63-114e1ce2b713"/></details></li></ul><hr id="83bef0c0-7709-4390-8b87-79116142bf36"/><ul id="01011c6f-c5fd-4955-9f3e-e436c3590873" class="toggle"><li><details open=""><summary>Disable SIP (More features, Less Secure)</summary><ul id="4462b3b0-9c53-4737-b4d9-f8d1689bf00a" class="toggle"><li><details open=""><summary>Disable SIP</summary><blockquote id="fd13a626-4230-41c5-83a3-016a26b3e080" class="">How to disable SIP : <a href="https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection">https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection</a></blockquote><ol id="b1bcf3ba-7f83-4a6e-a158-b0b74ccdef60" class="numbered-list" start="1"><li>Shutdown Computer</li></ol><ol id="d6a733ea-9cf1-45a0-8d97-de1f88cc0955" class="numbered-list" start="2"><li>Turn on your Mac and immediately press and hold these two keys: Command (⌘) and R.</li></ol><ol id="0890b4ce-6b09-408b-87ed-dab39f9ee593" class="numbered-list" start="3"><li>Release the keys when you see an Apple logo, spinning globe, or <a href="https://support.apple.com/kb/HT204156">other startup screen</a>.</li></ol><ol id="209152f1-f0a6-4338-b4a8-58a6ad37368c" class="numbered-list" start="4"><li>You might be prompted to enter a password, such as a <a href="https://support.apple.com/kb/HT204455">firmware password</a> or the password of a user who is an administrator of this Mac. Enter the requested password to continue.<figure id="64b9ca62-bba5-4600-ae93-0e79a7080450" class="image"><a href="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Catalina/macos-catalina-recovery-mode-auth-installer-password.jpg"><img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Catalina/macos-catalina-recovery-mode-auth-installer-password.jpg"/></a></figure></li></ol><ol id="01f1a2e4-13ff-4ad8-9122-d7c02f50522d" class="numbered-list" start="5"><li>Startup is complete when you see the utilities window:<figure id="047146eb-4761-4c5b-9c5a-e7c08734f1ff" class="image"><a href="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Catalina/macos-catalina-recovery-mode-reinstall.jpg"><img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Catalina/macos-catalina-recovery-mode-reinstall.jpg"/></a></figure></li></ol><ol id="febb589d-13f5-484f-825a-50b777b0532c" class="numbered-list" start="6"><li>Go to menu bar at the top and go to <code>Utilities &gt; Terminal</code> </li></ol><ol id="3069cbae-678c-4151-8bd0-17544af76f1f" class="numbered-list" start="7"><li>Type one of the following depending on your OS Version: <pre id="46076b61-b950-418a-8ee1-591b04d3ed99" class="code"><code># If you&#x27;re on macOS 11.0.1
+# Requires Filesystem Protections and Debugging Restrictions to be disabled (workaround because --without debug does not work)
+# (printed warning can be safely ignored)
+csrutil disable --with kext --with dtrace --with nvram --with basesystem
+
+# If you&#x27;re on macOS 10.14 and 10.15
+# Requires Filesystem Protections and Debugging Restrictions to be disabled
+# (printed warning can be safely ignored)
+csrutil enable --without debug --without fs
+
+# If you&#x27;re on macOS 10.13
+# (disables SIP completely)
+csrutil disable</code></pre></li></ol><ol id="08e67053-96d8-422b-be98-a731379bbfa8" class="numbered-list" start="8"><li>Reboot</li></ol><ol id="91792d5d-dcf7-435c-9ea8-c2882b76c290" class="numbered-list" start="9"><li>You can verify that System Integrity Protection is turned off by running <code>csrutil status</code>, which returns <code>System Integrity Protection status: disabled</code> if it is turned off.</li></ol></details></li></ul><ul id="bf44b905-d1d2-41ec-b7ac-2f97e7502fc2" class="toggle"><li><details open=""><summary>Install Yabai and Other tools with Homebrew</summary><ul id="6c83de4a-84cf-416b-ab6d-ada551c602a4" class="toggle"><li><details open=""><summary>Brew install tools</summary><pre id="34738e18-e21b-4c5f-81e3-63f5154bc10d" class="code"><code>--------------------------------------
+# https://github.com/koekeishiya/yabai
+# MacOS window manager
+<strong>brew install koekeishiya/formulae/yabai
+# Password require
+sudo yabai --install-sa
+--------------------------------------
+# https://github.com/stedolan/jq
+# Lightweight and flexible command-line JSON processor 
+brew install jq
+--------------------------------------
+# https://github.com/koekeishiya/skhd
+# Simple hotkey daemon for macOS
+brew install koekeishiya/formulae/skhd
+--------------------------------------</strong></code></pre></details></li></ul></details></li></ul><ul id="ed6879fa-d284-468f-98a5-9ba73a8a44f3" class="toggle"><li><details open=""><summary>Post Install setup</summary><ul id="b7372440-8cf2-4c8f-8271-05799c390921" class="toggle"><li><details open=""><summary>Create and setup configuration files</summary><blockquote id="85533208-5653-4fcc-993a-2468a7721dfb" class="">You need to create config files and put some stuff in them </blockquote><ul id="5d80056f-188a-4a50-a603-def9f27e6329" class="toggle"><li><details open=""><summary>Yabai config</summary><ul id="4c9d0040-65e0-4f6d-b244-906fb49de611" class="toggle"><li><details open=""><summary>Where to put the config file?</summary><pre id="f11ea5c7-d8b8-45a0-9ccc-22e1be149e7a" class="code"><code># The per-user yabai configuration file must be executable;
+# it is just a shell script that&#x27;s ran before yabai launches.
+# It must be placed at one of the following places (in order):
+
+$XDG_CONFIG_HOME/yabai/yabairc
+$HOME/.config/yabai/yabairc # &lt; my recommendation 
+$HOME/.yabairc</code></pre></details></li></ul><ul id="e4979563-0640-40fc-886f-8f91f6919c36" class="toggle"><li><details open=""><summary>How to make the config file?</summary><pre id="76853142-f5f5-4a09-9487-b72606df00a3" class="code"><code># create empty configuration file and make it executable
+# Link to example config: https://github.com/koekeishiya/yabai/blob/master/examples/yabairc
+touch ~/.config/yabai/yabairc
+chmod +x ~/.config/yabai/yabairc</code></pre></details></li></ul><ul id="76fc99d0-4bfe-4be0-bfd4-7e7c1b5a826c" class="toggle"><li><details open=""><summary>Put some stuff in your config file</summary><ul id="90f17719-4790-4d1e-b173-2ca9ab87b53a" class="toggle"><li><details open=""><summary>My Personal Config</summary><pre id="2dcdd83d-3ce9-4cb0-9fa4-aa941e755575" class="code"><code>#!/usr/bin/env sh
+#YABAI STUFF
+
+# bsp or float (default: bsp)
+#yabai -m config layout bsp
+
+# Override default layout for space 2 only
+#yabai -m config --space 2 layout float
+
+# My custom space names
+yabai -m space 1 --label one
+yabai -m space 2 --label two
+yabai -m space 3 --label three
+yabai -m space 4 --label four
+yabai -m space 5 --label five
+yabai -m space 6 --label six
+
+# float system preferences
+yabai -m rule --add app=&quot;^System Preferences$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Karabiner-Elements$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Karabiner-EventViewer$&quot; sticky=on layer=above manage=off
+#yabai -m rule --add app=&quot;^Carbon Copy Cloner$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Finder$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Keka$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Alfred Preferences$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Disk Utility$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^System Information$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Activity Monitor$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Path Finder$&quot; manage=off
+yabai -m rule --add app=&quot;^TeamViewer$&quot; sticky=off layer=above manage=off
+yabai -m rule --add app=&quot;Fantastical&quot; manage=off
+yabai -m rule --add app=&quot;^Spotify$&quot; manage=off
+yabai -m rule --add app=&quot;^iTerm2$&quot; manage=off
+yabai -m rule --add app=&quot;^Flux$&quot; manage=off
+yabai -m rule --add app=&quot;^Time Out$&quot; manage=off
+yabai -m rule --add app=&quot;^perl_client_app$&quot; manage=off
+yabai -m rule --add app=&quot;^console$&quot; manage=off
+yabai -m rule --add app=&quot;^Harvest$&quot; manage=off
+yabai -m rule --add app=&quot;^CiscoSparkHelper$&quot; manage=off
+yabai -m rule --add app=&quot;^Logi Options$&quot; manage=off
+yabai -m rule --add app=&quot;^Cisco Webex Start$&quot; manage=off
+#yabai -m rule --add app=iTerm space=2
+
+#find ~/Library/Parallels/Applications\ Menus/ -maxdepth 3 -type f | awk -F&#x27;/&#x27; &#x27;{ print $NF; }&#x27; | awk &#x27;{$1=$1};1&#x27; | sort | uniq | tr &quot;\n&quot; &quot;\0&quot; | xargs -0 -I{} yabai -m rule --add app=&quot;^{}\$&quot; title=&quot;.*&quot; manage=on
+
+# global settings
+#yabai -m config focus_follows_mouse          autoraise
+#yabai -m config focus_follows_mouse          on
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+yabai -m config window_topmost off
+#yabai -m config window_shadow float
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 0.00
+yabai -m config active_window_opacity 1.0
+#yabai -m config normal_window_opacity        0.97
+#yabai -m config window_border                on | off
+
+## WITH SIP ENABLED
+yabai -m config window_border off
+
+## WTIH SIP DISABLED
+ #yabai -m config window_border on
+ #yabai -m config window_border_width 3
+ #yabai -m config active_window_border_color 0xFF40FF00
+ #yabai -m config normal_window_border_color 0x00FFFFFF
+#yabai -m config insert_feedback_color        0xffd75f5f
+
+yabai -m config auto_balance off
+yabai -m config split_ratio 0.50
+# # set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier ctrl
+# set modifier + right-click drag to resize window (default: resize)
+yabai -m config mouse_action2 resize
+# set modifier + left-click drag to resize window (default: move)
+yabai -m config mouse_action1 move
+
+# general space settings
+#yabai -m config focused_border_skip_floating  1
+#yabai -m config --space 3 layout             float
+
+yabai -m config layout bsp
+yabai -m config top_padding 2
+#yabai -m config bottom_padding 22
+yabai -m config bottom_padding 2
+#yabai -m config left_padding 40
+yabai -m config left_padding 2
+#yabai -m config right_padding 10
+yabai -m config right_padding 2
+yabai -m config window_gap 10
+
+#Limelight addon
+killall limelight &amp;&gt;/dev/null
+limelight &amp;&gt;/dev/null &amp;
+
+# #Ubersicht widget bar stuff
+#yabai -m signal --add event=space_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-primary-jsx\&quot;&#x27;&quot;
+#yabai -m signal --add event=display_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-primary-jsx\&quot;&#x27;&quot;
+
+#yabai -m signal --add event=space_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-secondary-jsx\&quot;&#x27;&quot;
+#yabai -m signal --add event=display_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-secondary-jsx\&quot;&#x27;&quot;
+
+# signals
+# yabai -m signal --add event=window_destroyed action=&quot;yabai -m query --windows --window &amp;&gt; /dev/null || yabai -m window --focus mouse&quot;
+#yabai -m signal --add event=space_changed action=&quot;yabai -m window --focus $(yabai -m query --windows --window | jq &quot;.id&quot;)&quot;
+# yabai -m signal --add event=application_terminated action=&quot;yabai -m query --windows --window &amp;&gt; /dev/null || yabai -m window --focus mouse&quot;
+
+#testing signals
+# yabai -m signal --add event=window_destroyed action=&quot;terminal-notifier -message &#x27;window_destroyed&#x27;&quot;
+# yabai -m signal --add event=application_terminated action=&quot;terminal-notifier -message &#x27;application_terminated&#x27;&quot;
+
+## If I close the active window, focus on any other visible window.
+# yabai -m signal --add event=window_destroyed action=&quot;bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh&quot;
+# yabai -m signal --add event=space_changed action=&quot;export CUR_ACTIVE_APP=\&quot;iTerm2\&quot;&quot;
+
+echo &quot;yabai configuration loaded..&quot;
+
+#END</code></pre></details></li></ul><ul id="28db9469-e747-402c-bcbb-732c471b82a3" class="toggle"><li><details open=""><summary>Example Config</summary><blockquote id="df42013b-67a4-48ee-91f6-8c19ab6a2ac3" class="">Config from here : <a href="https://github.com/koekeishiya/yabai/blob/master/examples/yabairc">https://github.com/koekeishiya/yabai/blob/master/examples/yabairc</a></blockquote><pre id="741f192c-5902-4ece-986e-bc486d26109f" class="code"><code>#!/usr/bin/env sh
+
+# the scripting-addition must be loaded manually if
+# you are running yabai on macOS Big Sur. Uncomment
+# the following line to have the injection performed
+# when the config is executed during startup.
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+#
+# sudo yabai --load-sa
+# yabai -m signal --add event=dock_did_restart action=&quot;sudo yabai --load-sa&quot;
+
+# global settings
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          off
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                on
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      0.0
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
+yabai -m config window_border                off
+yabai -m config window_border_width          6
+yabai -m config active_window_border_color   0xff775759
+yabai -m config normal_window_border_color   0xff555555
+yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  12
+yabai -m config bottom_padding               12
+yabai -m config left_padding                 12
+yabai -m config right_padding                12
+yabai -m config window_gap                   06
+
+echo &quot;yabai configuration loaded..&quot;</code></pre></details></li></ul><p id="cad0ee33-af9f-4ba1-97ef-b4a2de74dd57" class="">
+</p></details></li></ul></details></li></ul><ul id="4473ef29-4bde-4c5a-8cb1-615c74628047" class="toggle"><li><details open=""><summary>skhd config</summary><ul id="df5d4438-ed11-42e0-b8ce-4a8a8c1d64ad" class="toggle"><li><details open=""><summary>Where to put the config file?</summary><pre id="a4d32cf1-d564-4a62-b5c0-d750d04d8838" class="code"><code># The per-user yabai configuration file must be executable;
+# it is just a shell script that&#x27;s ran before limelight launches.
+# It can be placed at anywhere you want .. Ex. :
+
+$HOME/.config/skhd/skhdrc</code></pre></details></li></ul><ul id="5253f385-9213-44a4-b4d0-02a5e739ab98" class="toggle"><li><details open=""><summary>How to make the config file?</summary><pre id="c70eb0cf-fdd5-4914-8234-e0fb63d1da7f" class="code"><code># create empty configuration file and make it executable
+touch ~/.config/skhd/skhdrc
+chmod +x ~/.config/skhd/skhdrc</code></pre></details></li></ul><ul id="6909f4b9-1f41-4e4b-968a-2866afb2bbb5" class="toggle"><li><details open=""><summary>Put some stuff in your config file</summary><ul id="cffe6cd2-de1b-4e03-901d-d169fbbc198c" class="toggle"><li><details open=""><summary>My Personal Config</summary><pre id="f625663f-60d3-433a-9ac8-df3d9982d7d8" class="code"><code>## HYPER == SHIFT + CMD + ALT + OPTION
+
+## Quickly restart the yabai launch agent
+ctrl + alt + cmd - r : launchctl kickstart -k &quot;gui/${UID}/homebrew.mxcl.yabai&quot;
+
+## Close active application
+hyper - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -re &quot;.id&quot;) --close)
+
+# test a command
+# lshift - x : terminal-notifier -message &quot;lshift - x&quot;
+# lshift - x : terminal-notifier -message &quot;$(yabai -m query --windows --window | jq -re &quot;.id&quot;)&quot;
+
+## open terminal
+# hyper - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
+
+## swap window
+hyper - y : yabai -m window --swap west
+# shift + alt - j : yabai -m window --swap south
+# shift + alt - k : yabai -m window --swap north
+hyper - 0x21 : yabai -m window --swap east # &quot;[&quot; key
+
+## send window to monitor and follow focus
+hyper - u : /Users/jesseskelton/CustomScripts/SwitchSpaces/moveWindowLeftAndFollowFocus.sh
+hyper - p : /Users/jesseskelton/CustomScripts/SwitchSpaces/moveWindowRightAndFollowFocus.sh
+
+## focus display
+ctrl + cmd - 1 : yabai -m window --display 1 yabai -m display --focus 1
+ctrl + cmd - 2 : yabai -m window --display 2 yabai -m display --focus 2
+ctrl + cmd - 3 : yabai -m window --display 3 yabai -m display --focus 3
+
+## increase window size
+#shift + alt - a : yabai -m window --resize left:-20:0
+#shift + alt - s : yabai -m window --resize bottom:0:20
+#shift + alt - w : yabai -m window --resize top:0:-20
+#shift + alt - d : yabai -m window --resize right:20:0
+
+## decrease window size
+#shift + cmd - a : yabai -m window --resize left:20:0
+#shift + cmd - s : yabai -m window --resize bottom:0:-20
+#shift + cmd - w : yabai -m window --resize top:0:20
+#shift + cmd - d : yabai -m window --resize right:-20:0
+
+## rotate tree 90
+hyper - r : yabai -m space --rotate 90
+
+## flip the tree vertically
+hyper - 4 : yabai -m space --mirror y-axis
+# mirror tree y-axis
+#alt - y : yabai -m space --mirror y-axis
+## mirror tree x-axis
+#alt - x : yabai -m space --mirror x-axis
+
+#Move active window to next space on current display
+shift + lalt + lcmd + ctrl + ralt - 1 : yabai -m query --spaces --space | jq -re &quot;.index&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;1&#x27; ]]; then yabai -m window --space 2; elif [[ &#x27;{}&#x27; = &#x27;2&#x27; ]]; then yabai -m window --space 1; fi&quot;
+shift + lalt + lcmd + ctrl + ralt - 2 : yabai -m query --spaces --space | jq -re &quot;.index&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;3&#x27; ]]; then yabai -m window --space 4; elif [[ &#x27;{}&#x27; = &#x27;4&#x27; ]]; then yabai -m window --space 3; fi&quot;
+shift + lalt + lcmd + ctrl + ralt - 3 : yabai -m query --spaces --space | jq -re &quot;.index&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;5&#x27; ]]; then yabai -m window --space 6; elif [[ &#x27;{}&#x27; = &#x27;6&#x27; ]]; then yabai -m window --space 5; fi&quot;
+
+# show next space per display
+#hyper - 1 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 1
+#hyper - 2 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 2
+#hyper - 3 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 3
+ctrl + alt + cmd + lshift - 1 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 1
+ctrl + alt + cmd + lshift - 2 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 2
+ctrl + alt + cmd + lshift - 3 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 3
+
+## toggle window fullscreen zoom
+hyper - f : yabai -m window --toggle zoom-fullscreen
+
+# cycle through windows
+# cycle backwards
+#hyper - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+#hyper - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+#alt - p : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
+#
+# go to each window WITHOUT going into a stack
+# ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select((.\&quot;stack-index\&quot; &lt;= 1) and (.app != \&quot;Hammerspoon\&quot;))]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select(.app != \&quot;Hammerspoon\&quot;)]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+# ctrl + alt + cmd + rshift - i : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+#hyper - 0x29 : yabai -m query --spaces \
+#hyper - o : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+#alt - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
+
+# go to each window WITHOUT going into a stack
+# ctrl + alt + cmd + lshift - o : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select((.\&quot;stack-index\&quot; &lt;= 1) and (.app != \&quot;Hammerspoon\&quot;))]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+ctrl + alt + cmd + lshift - o : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select(.app != \&quot;Hammerspoon\&quot;)]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+# Toggle foucus on a stack
+ctrl + alt + cmd + lshift - return : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+
+#create a stack
+# ctrl + alt + cmd + rshift - 1 : yabai -m query --windows --window | jq -re &quot;.&quot; | xargs -I{} yabai -m window 1 --stack {}
+# stack next window onto current window
+ctrl + alt + cmd + lshift - 0x43 :  window=$(yabai -m query --windows --window | jq -r &#x27;.id&#x27;) &amp;&amp; yabai -m window east --stack $window || (yabai -m window $window --toggle float &amp;&amp; yabai -m window $window --toggle float)
+
+################################################################
+############################# UNUSED ###########################
+################################################################
+
+## float / unfloat window and center on screen
+#alt - t : yabai -m window --toggle float;\
+#yabai -m window --grid 4:4:1:1:2:2 ## toggle sticky alt - s : yabai -m window --toggle sticky ## toggle sticky, float and resize to picture-in-picture size alt - p : yabai -m window --toggle sticky;\ yabai -m window --grid 5:5:4:0:1:1 ## change layout of desktop ctrl + alt - a : yabai -m space --layout bsp ctrl + alt - d : yabai -m space --layout float
+
+## toggle window split type
+#alt - e : yabai -m window --toggle split
+
+## toggle window border
+#shift + alt - b : yabai -m window --toggle border
+
+## create desktop, move window and follow focus
+#shift + cmd - n : yabai -m space --create &amp;&amp; \
+#index=&quot;$(yabai -m query --spaces --display | jq &#x27;map(select(.&quot;native-fullscreen&quot; == 0))[-1].index&#x27;)&quot; &amp;&amp; \
+#yabai -m window --space &quot;${index}&quot; &amp;&amp; \
+#yabai -m space --focus &quot;${index}&quot;
+
+## create desktop and follow focus
+#shift + alt - n : yabai -m space --create &amp;&amp; \
+#index=&quot;$(yabai -m query --spaces --display | jq &#x27;map(select(.&quot;native-fullscreen&quot; == 0))[-1].index&#x27;)&quot; &amp;&amp; \
+#yabai -m space --focus &quot;${index}&quot;
+
+## destroy desktop
+#cmd + alt - w : yabai -m space --destroy
+
+## fast focus desktop
+#cmd + alt - x : yabai -m space --focus last
+#cmd + alt - z : yabai -m space --focus prev
+#cmd + alt - c : yabai -m space --focus next
+#cmd + alt - 1 : yabai -m space --focus 1
+#cmd + alt - 2 : yabai -m space --focus 2
+#cmd + alt - 3 : yabai -m space --focus 3
+#cmd + alt - 4 : yabai -m space --focus 4
+#cmd + alt - 5 : yabai -m space --focus 5
+#cmd + alt - 6 : yabai -m space --focus 6
+#cmd + alt - 7 : yabai -m space --focus 7
+#cmd + alt - 8 : yabai -m space --focus 8
+#cmd + alt - 9 : yabai -m space --focus 9
+#cmd + alt - 0 : yabai -m space --focus 10
+
+## send window to desktop and follow focus
+#shift + cmd - x : yabai -m window --space last; yabai -m space --focus last
+#shift + cmd - z : yabai -m window --space prev; yabai -m space --focus prev
+#shift + cmd - c : yabai -m window --space next; yabai -m space --focus next
+#shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
+#shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+#shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
+#shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+#shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
+#shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+#shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
+#shift + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
+#shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
+#shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+
+## move window
+#shift + ctrl - a : yabai -m window --move rel:-20:0
+#shift + ctrl - s : yabai -m window --move rel:0:20
+#shift + ctrl - w : yabai -m window --move rel:0:-20
+#shift + ctrl - d : yabai -m window --move rel:20:0
+
+## Swap window
+# hyper - y : yabai -m window --warp west
+# shift + cmd - j : yabai -m window --warp south
+# shift + cmd - k : yabai -m window --warp north
+# hyper - 0x21 : yabai -m window --warp east # &quot;[&quot; key
+
+## focus monitor
+#ctrl + alt - x  : yabai -m display --focus last
+#ctrl + alt - z  : yabai -m display --focus prev || yabai -m display --focus last
+#ctrl + alt - c  : yabai -m display --focus next || yabai -m display --focus first
+#ctrl + alt - 1  : yabai -m display --focus 1
+#ctrl + alt - 2  : yabai -m display --focus 2
+#ctrl + alt - 3  : yabai -m display --focus 3
+
+# Random switch spaces stuff
+##hyper - 1 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;one&#x27; ]]; then yabai -m space --focus two; elif [[ &#x27;{}&#x27; = &#x27;two&#x27; ]]; then yabai -m space --focus one; fi&quot; | yabai -m query --windows --window | jq -re &quot;.id&quot; | xargs -I {} bash -c &quot;yabai -m window --focus {}&quot;;
+#hyper - 2 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;three&#x27; ]]; then yabai -m space --focus four; elif [[ &#x27;{}&#x27; = &#x27;four&#x27; ]]; then yabai -m space --focus three; fi&quot;
+#hyper - 3 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;five&#x27; ]]; then yabai -m space --focus six; elif [[ &#x27;{}&#x27; = &#x27;six&#x27; ]]; then yabai -m space --focus five; fi&quot;
+
+#similar to above
+#hyper - 3 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;five&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 6&#x27;; elif [[ &#x27;{}&#x27; = &#x27;six&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 5&#x27;; fi;&quot;
+#hyper - 2 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;three&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 4&#x27;; elif [[ &#x27;{}&#x27; = &#x27;four&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 3&#x27;; fi;&quot;
+#hyper - 1 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;one&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 2&#x27;; elif [[ &#x27;{}&#x27; = &#x27;two&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 1&#x27;; fi;&quot;
+
+#Swtich spaces without system integrtiy disabled
+#hyper - 1 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switch-spaces-1-2.sh
+#hyper - 2 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switch-spaces-3-4.sh
+#hyper - 3 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switch-spaces-5-6.sh
+
+#Swtich spaces without system integrtiy disabled
+# hyper - 3 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 3
+# hyper - 2 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 2
+# hyper - 1 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 1
+
+# ## focus window
+# alt - h : yabai -m window --focus west
+# alt - j : yabai -m window --focus south
+# alt - k : yabai -m window --focus north
+# alt - l : yabai -m window --focus east
+
+## set insertion point in focused container
+# ctrl + alt - h : yabai -m window --insert west
+#ctrl + alt - j : yabai -m window --insert south
+#ctrl + alt - k : yabai -m window --insert north
+#ctrl + alt - l : yabai -m window --insert east
+
+#ctrl + alt - h : yabai -m window --insert west
+#ctrl + alt - j : yabai -m window --insert south
+#ctrl + alt - k : yabai -m window --insert north
+#ctrl + alt - l : yabai -m window --insert east
+
+## send window to monitor and follow focus
+#ctrl + cmd - x  : yabai -m window --display last; yabai -m display --focus last
+#hyper - u : $(yabai -m window --display prev yabai -m display --focus prev) || $(yabai -m window --display last yabai -m display --focus last)
+
+## send window to monitor and follow focus
+#hyper - u : $(yabai -m window --display prev) || $(yabai -m window --display last)
+#hyper - p : $(yabai -m window --display next yabai -m display --focus next) || $(yabai -m window --display first yabai -m display --focus first)
+#hyper - p : $(yabai -m window --display next) || $(yabai -m window --display first)
+
+## move window to different monitor
+#ctrl + cmd + alt - l : yabai -m window --display next; yabai -m window --focus next || yabai -m window --display first; yabai -m window --display next || yabai -m config --display first
+#ctrl + cmd + alt - h : yabai -m window --display next || yabai -m window --display first; yabai -m window --display next || yabai -m config --display first
+
+## toggle desktop offset
+#alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+## toggle window parent zoom
+#alt - d : yabai -m window --toggle zoom-parent
+
+#hyper - h : yabai -m query --spaces \
+#| jq -re &quot;.[] | select(.visible == 1).index&quot; \
+#| xargs -I{} yabai -m query --windows --space {} \
+#| jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; \
+#| xargs -I{} yabai -m window --focus {}
+
+#hyper - o : yabai -m query --spaces \
+#| jq -re &quot;.[] | select(.visible == 1).index&quot; \
+#| xargs -I{} yabai -m query --windows --space {} \
+#| jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).display&quot; \
+#| xargs -I{} yabai -m window --display {}
+
+#########################################################################
+#########################################################################
+#########################################################################
+
+#END</code></pre></details></li></ul><ul id="fd4a198d-12bd-499f-97be-98d839fac8d1" class="toggle"><li><details open=""><summary>Example Config</summary><blockquote id="e3f6e658-17dd-4231-b28c-ee45342e7ef3" class="">Config from here : <a href="https://github.com/koekeishiya/yabai/blob/master/examples/skhdrc">https://github.com/koekeishiya/yabai/blob/master/examples/skhdrc</a></blockquote><pre id="ad2a798b-f032-4400-b20e-f0b5cfaea795" class="code"><code># ################################################################ #
+# THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
+# FOR SIMPLE EXAMPLE MAPPINGS LOOK FURTHER DOWN THIS FILE..        #
+# ################################################################ #
+
+# A list of all built-in modifier and literal keywords can
+# be found at https://github.com/koekeishiya/skhd/issues/1
+#
+# A hotkey is written according to the following rules:
+#
+#   hotkey       = &lt;mode&gt; &#x27;&lt;&#x27; &lt;action&gt; | &lt;action&gt;
+#
+#   mode         = &#x27;name of mode&#x27; | &lt;mode&gt; &#x27;,&#x27; &lt;mode&gt;
+#
+#   action       = &lt;keysym&gt; &#x27;[&#x27; &lt;proc_map_lst&gt; &#x27;]&#x27; | &lt;keysym&gt; &#x27;-&gt;&#x27; &#x27;[&#x27; &lt;proc_map_lst&gt; &#x27;]&#x27;
+#                  &lt;keysym&gt; &#x27;:&#x27; &lt;command&gt;          | &lt;keysym&gt; &#x27;-&gt;&#x27; &#x27;:&#x27; &lt;command&gt;
+#                  &lt;keysym&gt; &#x27;;&#x27; &lt;mode&gt;             | &lt;keysym&gt; &#x27;-&gt;&#x27; &#x27;;&#x27; &lt;mode&gt;
+#
+#   keysym       = &lt;mod&gt; &#x27;-&#x27; &lt;key&gt; | &lt;key&gt;
+#
+#   mod          = &#x27;modifier keyword&#x27; | &lt;mod&gt; &#x27;+&#x27; &lt;mod&gt;
+#
+#   key          = &lt;literal&gt; | &lt;keycode&gt;
+#
+#   literal      = &#x27;single letter or built-in keyword&#x27;
+#
+#   keycode      = &#x27;apple keyboard kVK_&lt;Key&gt; values (0x3C)&#x27;
+#
+#   proc_map_lst = * &lt;proc_map&gt;
+#
+#   proc_map     = &lt;string&gt; &#x27;:&#x27; &lt;command&gt; | &lt;string&gt;     &#x27;~&#x27; |
+#                  &#x27;*&#x27;      &#x27;:&#x27; &lt;command&gt; | &#x27;*&#x27;          &#x27;~&#x27;
+#
+#   string       = &#x27;&quot;&#x27; &#x27;sequence of characters&#x27; &#x27;&quot;&#x27;
+#
+#   command      = command is executed through &#x27;$SHELL -c&#x27; and
+#                  follows valid shell syntax. if the $SHELL environment
+#                  variable is not set, it will default to &#x27;/bin/bash&#x27;.
+#                  when bash is used, the &#x27;;&#x27; delimeter can be specified
+#                  to chain commands.
+#
+#                  to allow a command to extend into multiple lines,
+#                  prepend &#x27;\&#x27; at the end of the previous line.
+#
+#                  an EOL character signifies the end of the bind.
+#
+#   -&gt;           = keypress is not consumed by skhd
+#
+#   *            = matches every application not specified in &lt;proc_map_lst&gt;
+#
+#   ~            = application is unbound and keypress is forwarded per usual, when specified in a &lt;proc_map&gt;
+#
+# A mode is declared according to the following rules:
+#
+#   mode_decl = &#x27;::&#x27; &lt;name&gt; &#x27;@&#x27; &#x27;:&#x27; &lt;command&gt; | &#x27;::&#x27; &lt;name&gt; &#x27;:&#x27; &lt;command&gt; |
+#               &#x27;::&#x27; &lt;name&gt; &#x27;@&#x27;               | &#x27;::&#x27; &lt;name&gt;
+#
+#   name      = desired name for this mode,
+#
+#   @         = capture keypresses regardless of being bound to an action
+#
+#   command   = command is executed through &#x27;$SHELL -c&#x27; and
+#               follows valid shell syntax. if the $SHELL environment
+#               variable is not set, it will default to &#x27;/bin/bash&#x27;.
+#               when bash is used, the &#x27;;&#x27; delimeter can be specified
+#               to chain commands.
+#
+#               to allow a command to extend into multiple lines,
+#               prepend &#x27;\&#x27; at the end of the previous line.
+#
+#               an EOL character signifies the end of the bind.
+
+# ############################################################### #
+# THE FOLLOWING SECTION CONTAIN SIMPLE MAPPINGS DEMONSTRATING HOW #
+# TO INTERACT WITH THE YABAI WM. THESE ARE SUPPOSED TO BE USED AS #
+# A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
+# ############################################################### #
+
+# focus window
+# alt - h : yabai -m window --focus west
+
+# swap managed window
+# shift + alt - h : yabai -m window --swap north
+
+# move managed window
+# shift + cmd - h : yabai -m window --warp east
+
+# balance size of windows
+# shift + alt - 0 : yabai -m space --balance
+
+# make floating window fill screen
+# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+
+# make floating window fill left-half of screen
+# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+
+# create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
+# shift + cmd - n : yabai -m space --create &amp;&amp; \
+#                   index=&quot;$(yabai -m query --spaces --display | jq &#x27;map(select(.&quot;native-fullscreen&quot; == 0))[-1].index&#x27;)&quot; &amp;&amp; \
+#                   yabai -m window --space &quot;${index}&quot; &amp;&amp; \
+#                   yabai -m space --focus &quot;${index}&quot;
+
+# fast focus desktop
+# cmd + alt - x : yabai -m space --focus recent
+# cmd + alt - 1 : yabai -m space --focus 1
+
+# send window to desktop and follow focus
+# shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
+# shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+
+# focus monitor
+# ctrl + alt - z  : yabai -m display --focus prev
+# ctrl + alt - 3  : yabai -m display --focus 3
+
+# send window to monitor and follow focus
+# ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
+# ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
+
+# move floating window
+# shift + ctrl - a : yabai -m window --move rel:-20:0
+# shift + ctrl - s : yabai -m window --move rel:0:20
+
+# increase window size
+# shift + alt - a : yabai -m window --resize left:-20:0
+# shift + alt - w : yabai -m window --resize top:0:-20
+
+# decrease window size
+# shift + cmd - s : yabai -m window --resize bottom:0:-20
+# shift + cmd - w : yabai -m window --resize top:0:20
+
+# set insertion point in focused container
+# ctrl + alt - h : yabai -m window --insert west
+
+# toggle window zoom
+# alt - d : yabai -m window --toggle zoom-parent
+# alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle window split type
+# alt - e : yabai -m window --toggle split
+
+# float / unfloat window and center on screen
+# alt - t : yabai -m window --toggle float;\
+#           yabai -m window --grid 4:4:1:1:2:2
+
+# toggle sticky(+float), topmost, picture-in-picture
+# alt - p : yabai -m window --toggle sticky;\
+#           yabai -m window --toggle topmost;\
+#           yabai -m window --toggle pip</code></pre></details></li></ul><p id="22eb0d7b-b355-4fea-a869-6a095f2b628d" class="">
+</p></details></li></ul></details></li></ul><p id="de5a5a6f-9320-4a1e-9374-343ab1525f09" class="">* <strong>All of the configuration options can be changed at runtime as well.</strong></p></details></li></ul><ul id="38cc6997-1bbc-4126-888c-634878cc878d" class="toggle"><li><details open=""><summary>Additional Mac System Settings</summary><ul id="abc60e60-8cde-4a04-a681-f7e86eeabd70" class="toggle"><li><details open=""><summary>Mission Control Settings for Yabai</summary><p id="f5e5ccf3-f5d5-40e1-b94b-bfd10be39d55" class="">Navigate to : <code>System Preferences &gt; Mission Control</code></p><ul id="6e1d681d-2063-4f22-b28e-aaa47537bf31" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In the Mission Control preferences pane in System Preferences, the setting &quot;<em>Displays have separate Spaces</em>&quot; must be <code>enabled</code>.</span></li></ul><ul id="bd1a04a8-94c9-42a2-901d-f8a928b21e1b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In the Mission Control preferences pane in System Preferences, the setting &quot;<em>Automatically rearrange Spaces based on most recent use</em>&quot; should be <code>disabled</code> for commands that rely on the ordering of spaces to work reliably.</span></li></ul><figure id="ff76a54a-de19-411c-aa73-5e4f82a9071f" class="image"><a href="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled.png"><img style="width:780px" src="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled.png"/></a></figure></details></li></ul></details></li></ul></details></li></ul><ul id="5563a627-415c-4a84-92dc-8a14410f5cae" class="toggle"><li><details open=""><summary>Start everything!</summary><pre id="94594a20-30c0-4d01-a04a-3892fc92684c" class="code"><code><strong>--------------------------------------
+# Will automatically start Yabai when computer starts
+brew services start yabai
+# Will automatically start skhd when computer starts
+brew services start skhd
+--------------------------------------
+
+# You may need to </strong>run &#x27;killall Dock&#x27; to load the scripting addition.
+killall Dock</code></pre></details></li></ul><ul id="098b7d7d-0af3-4f4a-8f82-0b21bfc8341c" class="toggle"><li><details open=""><summary>Enjoy</summary><figure id="0cdec8db-da78-4b41-a40e-77055bc0af60" class="image"><a href="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled%201.png"><img style="width:860px" src="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled%201.png"/></a></figure></details></li></ul></details></li></ul><p id="1a2066bc-8e51-48a9-9510-1450233bf8a7" class="">                                    ~OR~</p><ul id="67b3a605-b03e-432e-b79f-025b4f0f9bf2" class="toggle"><li><details open=""><summary>Keep SIP Enabled (Less features, More Secure)</summary><ul id="ce9aa0a2-a8fc-413b-a4e0-d63fb35bf0f9" class="toggle"><li><details open=""><summary>Install Yabai and Other tools with Homebrew</summary><ul id="0af05691-8c0d-4b7c-b2be-b873428d0225" class="toggle"><li><details open=""><summary>Brew install tools</summary><pre id="87f968a9-6067-4d2e-8f19-1eb51ab2623e" class="code"><code>--------------------------------------
+# https://github.com/koekeishiya/yabai
+# MacOS window manager
+<strong>brew install koekeishiya/formulae/yabai
+--------------------------------------
+# https://github.com/stedolan/jq
+# Lightweight and flexible command-line JSON processor 
+brew install jq
+--------------------------------------
+# https://github.com/koekeishiya/skhd
+# Simple hotkey daemon for macOS
+brew install koekeishiya/formulae/skhd
+--------------------------------------</strong></code></pre></details></li></ul><ul id="e6b2a3c0-e5ef-463b-be52-20c86c255846" class="toggle"><li><details open=""><summary>Install Limelight (Color border) (Optional) <a href="https://github.com/koekeishiya/limelight">https://github.com/koekeishiya/limelight</a></summary><blockquote id="f43db700-ed8e-4e43-ade3-dc5894c0e83f" class="">Port of the old border system that used to be implemented in yabai v2.4.3.</blockquote><h3 id="22c18875-7b09-4c32-b92d-f621275c4085" class="">Build it</h3><ol id="aa66001e-ce35-4292-8914-b981b56d6cf7" class="numbered-list" start="1"><li>Clone/Download Repo</li></ol><ol id="f0fe58d7-c033-4561-865a-c293560d266d" class="numbered-list" start="2"><li>make it (Requires xcode command line tools)</li></ol><ol id="5ef09c84-45a9-4425-8701-cb6208d0dc5b" class="numbered-list" start="3"><li>link it</li></ol><pre id="90ba574b-140a-415a-b298-2ef360c79534" class="code"><code># simply clone repo and run make
+ make
+
+# symlink binary to somewhere in your path (does not need to be re-created after a rebuild)
+# replace the second argument below with some directory in your path
+ ln -s /path/to/bin/limelight /usr/local/bin/limelight</code></pre><pre id="16786cc3-c528-4a15-91ee-30c7ef1160c6" class="code"><code># add the following to the end of your yabairc to have it launch automatically when yabai starts.
+# make sure the limelight binary is added somewhere in your $PATH
+
+# kill any existing limelight process if one exists, before we launch a new one
+killall limelight &amp;&gt; /dev/null
+limelight &amp;&gt; /dev/null &amp;</code></pre></details></li></ul></details></li></ul><ul id="b4482795-6670-4406-8fe3-06ba8c4616e1" class="toggle"><li><details open=""><summary>Post Install setup</summary><ul id="aa8d373b-a42e-4c5b-a57a-9f3b56b5d12a" class="toggle"><li><details open=""><summary>Create and setup configuration files</summary><blockquote id="10d793f0-bf11-4802-88af-eaed44582495" class="">You need to create config files and put some stuff in them </blockquote><ul id="a5944ed2-6d24-45e0-9c89-990260bf3017" class="toggle"><li><details open=""><summary>Yabai config</summary><ul id="7fde19fd-919a-4845-9efc-bba02f5f4208" class="toggle"><li><details open=""><summary>Where to put the config file?</summary><pre id="38cc16db-7aa4-4c7e-8d24-e9cfcfc21bb9" class="code"><code># The per-user yabai configuration file must be executable;
+# it is just a shell script that&#x27;s ran before yabai launches.
+# It must be placed at one of the following places (in order):
+
+$XDG_CONFIG_HOME/yabai/yabairc
+$HOME/.config/yabai/yabairc # &lt; my recommendation 
+$HOME/.yabairc</code></pre></details></li></ul><ul id="dec51154-a88f-4f36-9a6a-d7c02716e73c" class="toggle"><li><details open=""><summary>How to make the config file?</summary><pre id="022b4dd1-39e2-433f-8f51-db916af269db" class="code"><code># create empty configuration file and make it executable
+# Link to example config: https://github.com/koekeishiya/yabai/blob/master/examples/yabairc
+touch ~/.config/yabai/yabairc
+chmod +x ~/.config/yabai/yabairc</code></pre></details></li></ul><ul id="83aa2336-b5a4-4a6c-bb5d-e44512798c00" class="toggle"><li><details open=""><summary>Put some stuff in your config file</summary><ul id="85df0577-5e5c-4aa7-afa9-61ef6ce035eb" class="toggle"><li><details open=""><summary>My Personal Config</summary><pre id="5107d14f-51f1-4a8d-8533-5a9b41da94d0" class="code"><code>#!/usr/bin/env sh
+#YABAI STUFF
+
+# bsp or float (default: bsp)
+#yabai -m config layout bsp
+
+# Override default layout for space 2 only
+#yabai -m config --space 2 layout float
+
+# My custom space names
+yabai -m space 1 --label one
+yabai -m space 2 --label two
+yabai -m space 3 --label three
+yabai -m space 4 --label four
+yabai -m space 5 --label five
+yabai -m space 6 --label six
+
+# float system preferences
+yabai -m rule --add app=&quot;^System Preferences$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Karabiner-Elements$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Karabiner-EventViewer$&quot; sticky=on layer=above manage=off
+#yabai -m rule --add app=&quot;^Carbon Copy Cloner$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Finder$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Keka$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Alfred Preferences$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Disk Utility$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^System Information$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Activity Monitor$&quot; sticky=on layer=above manage=off
+yabai -m rule --add app=&quot;^Path Finder$&quot; manage=off
+yabai -m rule --add app=&quot;^TeamViewer$&quot; sticky=off layer=above manage=off
+yabai -m rule --add app=&quot;Fantastical&quot; manage=off
+yabai -m rule --add app=&quot;^Spotify$&quot; manage=off
+yabai -m rule --add app=&quot;^iTerm2$&quot; manage=off
+yabai -m rule --add app=&quot;^Flux$&quot; manage=off
+yabai -m rule --add app=&quot;^Time Out$&quot; manage=off
+yabai -m rule --add app=&quot;^perl_client_app$&quot; manage=off
+yabai -m rule --add app=&quot;^console$&quot; manage=off
+yabai -m rule --add app=&quot;^Harvest$&quot; manage=off
+yabai -m rule --add app=&quot;^CiscoSparkHelper$&quot; manage=off
+yabai -m rule --add app=&quot;^Logi Options$&quot; manage=off
+yabai -m rule --add app=&quot;^Cisco Webex Start$&quot; manage=off
+#yabai -m rule --add app=iTerm space=2
+
+#find ~/Library/Parallels/Applications\ Menus/ -maxdepth 3 -type f | awk -F&#x27;/&#x27; &#x27;{ print $NF; }&#x27; | awk &#x27;{$1=$1};1&#x27; | sort | uniq | tr &quot;\n&quot; &quot;\0&quot; | xargs -0 -I{} yabai -m rule --add app=&quot;^{}\$&quot; title=&quot;.*&quot; manage=on
+
+# global settings
+#yabai -m config focus_follows_mouse          autoraise
+#yabai -m config focus_follows_mouse          on
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+yabai -m config window_topmost off
+#yabai -m config window_shadow float
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 0.00
+yabai -m config active_window_opacity 1.0
+#yabai -m config normal_window_opacity        0.97
+#yabai -m config window_border                on | off
+
+## WITH SIP ENABLED
+yabai -m config window_border off
+
+## WTIH SIP DISABLED
+ #yabai -m config window_border on
+ #yabai -m config window_border_width 3
+ #yabai -m config active_window_border_color 0xFF40FF00
+ #yabai -m config normal_window_border_color 0x00FFFFFF
+#yabai -m config insert_feedback_color        0xffd75f5f
+
+yabai -m config auto_balance off
+yabai -m config split_ratio 0.50
+# # set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier ctrl
+# set modifier + right-click drag to resize window (default: resize)
+yabai -m config mouse_action2 resize
+# set modifier + left-click drag to resize window (default: move)
+yabai -m config mouse_action1 move
+
+# general space settings
+#yabai -m config focused_border_skip_floating  1
+#yabai -m config --space 3 layout             float
+
+yabai -m config layout bsp
+yabai -m config top_padding 2
+#yabai -m config bottom_padding 22
+yabai -m config bottom_padding 2
+#yabai -m config left_padding 40
+yabai -m config left_padding 2
+#yabai -m config right_padding 10
+yabai -m config right_padding 2
+yabai -m config window_gap 10
+
+#Limelight addon
+killall limelight &amp;&gt;/dev/null
+limelight &amp;&gt;/dev/null &amp;
+
+# #Ubersicht widget bar stuff
+#yabai -m signal --add event=space_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-primary-jsx\&quot;&#x27;&quot;
+#yabai -m signal --add event=display_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-primary-jsx\&quot;&#x27;&quot;
+
+#yabai -m signal --add event=space_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-secondary-jsx\&quot;&#x27;&quot;
+#yabai -m signal --add event=display_changed \
+#action=&quot;osascript -e &#x27;tell application \&quot;Übersicht\&quot; to refresh widget id \&quot;nibar-spaces-secondary-jsx\&quot;&#x27;&quot;
+
+# signals
+# yabai -m signal --add event=window_destroyed action=&quot;yabai -m query --windows --window &amp;&gt; /dev/null || yabai -m window --focus mouse&quot;
+#yabai -m signal --add event=space_changed action=&quot;yabai -m window --focus $(yabai -m query --windows --window | jq &quot;.id&quot;)&quot;
+# yabai -m signal --add event=application_terminated action=&quot;yabai -m query --windows --window &amp;&gt; /dev/null || yabai -m window --focus mouse&quot;
+
+#testing signals
+# yabai -m signal --add event=window_destroyed action=&quot;terminal-notifier -message &#x27;window_destroyed&#x27;&quot;
+# yabai -m signal --add event=application_terminated action=&quot;terminal-notifier -message &#x27;application_terminated&#x27;&quot;
+
+## If I close the active window, focus on any other visible window.
+# yabai -m signal --add event=window_destroyed action=&quot;bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh&quot;
+# yabai -m signal --add event=space_changed action=&quot;export CUR_ACTIVE_APP=\&quot;iTerm2\&quot;&quot;
+
+echo &quot;yabai configuration loaded..&quot;
+
+#END</code></pre></details></li></ul><ul id="2241f8ff-1e81-4de3-96b5-712b3a85787d" class="toggle"><li><details open=""><summary>Example Config</summary><blockquote id="62b76c23-3277-4c94-8fb9-0cc6cf6adfc6" class="">Config from here : <a href="https://github.com/koekeishiya/yabai/blob/master/examples/yabairc">https://github.com/koekeishiya/yabai/blob/master/examples/yabairc</a></blockquote><pre id="93513b7a-35f9-41f7-9101-23d5a92246db" class="code"><code>#!/usr/bin/env sh
+
+# the scripting-addition must be loaded manually if
+# you are running yabai on macOS Big Sur. Uncomment
+# the following line to have the injection performed
+# when the config is executed during startup.
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+#
+# sudo yabai --load-sa
+# yabai -m signal --add event=dock_did_restart action=&quot;sudo yabai --load-sa&quot;
+
+# global settings
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          off
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                on
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      0.0
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
+yabai -m config window_border                off
+yabai -m config window_border_width          6
+yabai -m config active_window_border_color   0xff775759
+yabai -m config normal_window_border_color   0xff555555
+yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  12
+yabai -m config bottom_padding               12
+yabai -m config left_padding                 12
+yabai -m config right_padding                12
+yabai -m config window_gap                   06
+
+echo &quot;yabai configuration loaded..&quot;</code></pre></details></li></ul><p id="af3a6b09-8e32-4f82-8a03-f21e64ad86ee" class="">
+</p></details></li></ul></details></li></ul><ul id="fb3adccc-44f1-466a-be4b-2865a71e1ad9" class="toggle"><li><details open=""><summary>skhd config</summary><ul id="c128f18d-58f3-48d2-a5a8-e1980a0b4284" class="toggle"><li><details open=""><summary>Where to put the config file?</summary><pre id="6dac18bd-e391-4d84-a41e-f75c2538b6bd" class="code"><code># The per-user yabai configuration file must be executable;
+# it is just a shell script that&#x27;s ran before limelight launches.
+# It can be placed at anywhere you want .. Ex. :
+
+$HOME/.config/skhd/skhdrc</code></pre></details></li></ul><ul id="183f1530-6813-42ea-b246-57acacae4055" class="toggle"><li><details open=""><summary>How to make the config file?</summary><pre id="5ba1fd7e-32bb-46cd-af7f-eb1b86585278" class="code"><code># create empty configuration file and make it executable
+touch ~/.config/skhd/skhdrc
+chmod +x ~/.config/skhd/skhdrc</code></pre></details></li></ul><ul id="e408513c-c4bf-40e6-a3d6-778107adfcc7" class="toggle"><li><details open=""><summary>Put some stuff in your config file</summary><ul id="2f9471c3-2964-4ba3-99ba-d315931fceaf" class="toggle"><li><details open=""><summary>My Personal Config</summary><pre id="8bcc5094-5ab1-4032-918e-26ae332fcd84" class="code"><code>## HYPER == SHIFT + CMD + ALT + OPTION
+
+## Quickly restart the yabai launch agent
+ctrl + alt + cmd - r : launchctl kickstart -k &quot;gui/${UID}/homebrew.mxcl.yabai&quot;
+
+## Close active application
+hyper - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -re &quot;.id&quot;) --close)
+
+# test a command
+# lshift - x : terminal-notifier -message &quot;lshift - x&quot;
+# lshift - x : terminal-notifier -message &quot;$(yabai -m query --windows --window | jq -re &quot;.id&quot;)&quot;
+
+## open terminal
+# hyper - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
+
+## swap window
+hyper - y : yabai -m window --swap west
+# shift + alt - j : yabai -m window --swap south
+# shift + alt - k : yabai -m window --swap north
+hyper - 0x21 : yabai -m window --swap east # &quot;[&quot; key
+
+## send window to monitor and follow focus
+hyper - u : /Users/jesseskelton/CustomScripts/SwitchSpaces/moveWindowLeftAndFollowFocus.sh
+hyper - p : /Users/jesseskelton/CustomScripts/SwitchSpaces/moveWindowRightAndFollowFocus.sh
+
+## focus display
+ctrl + cmd - 1 : yabai -m window --display 1 yabai -m display --focus 1
+ctrl + cmd - 2 : yabai -m window --display 2 yabai -m display --focus 2
+ctrl + cmd - 3 : yabai -m window --display 3 yabai -m display --focus 3
+
+## increase window size
+#shift + alt - a : yabai -m window --resize left:-20:0
+#shift + alt - s : yabai -m window --resize bottom:0:20
+#shift + alt - w : yabai -m window --resize top:0:-20
+#shift + alt - d : yabai -m window --resize right:20:0
+
+## decrease window size
+#shift + cmd - a : yabai -m window --resize left:20:0
+#shift + cmd - s : yabai -m window --resize bottom:0:-20
+#shift + cmd - w : yabai -m window --resize top:0:20
+#shift + cmd - d : yabai -m window --resize right:-20:0
+
+## rotate tree 90
+hyper - r : yabai -m space --rotate 90
+
+## flip the tree vertically
+hyper - 4 : yabai -m space --mirror y-axis
+# mirror tree y-axis
+#alt - y : yabai -m space --mirror y-axis
+## mirror tree x-axis
+#alt - x : yabai -m space --mirror x-axis
+
+#Move active window to next space on current display
+shift + lalt + lcmd + ctrl + ralt - 1 : yabai -m query --spaces --space | jq -re &quot;.index&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;1&#x27; ]]; then yabai -m window --space 2; elif [[ &#x27;{}&#x27; = &#x27;2&#x27; ]]; then yabai -m window --space 1; fi&quot;
+shift + lalt + lcmd + ctrl + ralt - 2 : yabai -m query --spaces --space | jq -re &quot;.index&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;3&#x27; ]]; then yabai -m window --space 4; elif [[ &#x27;{}&#x27; = &#x27;4&#x27; ]]; then yabai -m window --space 3; fi&quot;
+shift + lalt + lcmd + ctrl + ralt - 3 : yabai -m query --spaces --space | jq -re &quot;.index&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;5&#x27; ]]; then yabai -m window --space 6; elif [[ &#x27;{}&#x27; = &#x27;6&#x27; ]]; then yabai -m window --space 5; fi&quot;
+
+# show next space per display
+#hyper - 1 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 1
+#hyper - 2 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 2
+#hyper - 3 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 3
+ctrl + alt + cmd + lshift - 1 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 1
+ctrl + alt + cmd + lshift - 2 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 2
+ctrl + alt + cmd + lshift - 3 : /Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 3
+
+## toggle window fullscreen zoom
+hyper - f : yabai -m window --toggle zoom-fullscreen
+
+# cycle through windows
+# cycle backwards
+#hyper - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+#hyper - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+#alt - p : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
+#
+# go to each window WITHOUT going into a stack
+# ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select((.\&quot;stack-index\&quot; &lt;= 1) and (.app != \&quot;Hammerspoon\&quot;))]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select(.app != \&quot;Hammerspoon\&quot;)]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+# ctrl + alt + cmd + rshift - i : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+#hyper - 0x29 : yabai -m query --spaces \
+#hyper - o : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+#alt - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
+
+# go to each window WITHOUT going into a stack
+# ctrl + alt + cmd + lshift - o : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select((.\&quot;stack-index\&quot; &lt;= 1) and (.app != \&quot;Hammerspoon\&quot;))]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+ctrl + alt + cmd + lshift - o : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).index&quot; | xargs -I{} yabai -m query --windows --space {} | jq -re &quot;[.[] | select(.app != \&quot;Hammerspoon\&quot;)]&quot; | jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).id&quot; | xargs -I{} yabai -m window --focus {}
+
+# Toggle foucus on a stack
+ctrl + alt + cmd + lshift - return : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+
+#create a stack
+# ctrl + alt + cmd + rshift - 1 : yabai -m query --windows --window | jq -re &quot;.&quot; | xargs -I{} yabai -m window 1 --stack {}
+# stack next window onto current window
+ctrl + alt + cmd + lshift - 0x43 :  window=$(yabai -m query --windows --window | jq -r &#x27;.id&#x27;) &amp;&amp; yabai -m window east --stack $window || (yabai -m window $window --toggle float &amp;&amp; yabai -m window $window --toggle float)
+
+################################################################
+############################# UNUSED ###########################
+################################################################
+
+## float / unfloat window and center on screen
+#alt - t : yabai -m window --toggle float;\
+#yabai -m window --grid 4:4:1:1:2:2 ## toggle sticky alt - s : yabai -m window --toggle sticky ## toggle sticky, float and resize to picture-in-picture size alt - p : yabai -m window --toggle sticky;\ yabai -m window --grid 5:5:4:0:1:1 ## change layout of desktop ctrl + alt - a : yabai -m space --layout bsp ctrl + alt - d : yabai -m space --layout float
+
+## toggle window split type
+#alt - e : yabai -m window --toggle split
+
+## toggle window border
+#shift + alt - b : yabai -m window --toggle border
+
+## create desktop, move window and follow focus
+#shift + cmd - n : yabai -m space --create &amp;&amp; \
+#index=&quot;$(yabai -m query --spaces --display | jq &#x27;map(select(.&quot;native-fullscreen&quot; == 0))[-1].index&#x27;)&quot; &amp;&amp; \
+#yabai -m window --space &quot;${index}&quot; &amp;&amp; \
+#yabai -m space --focus &quot;${index}&quot;
+
+## create desktop and follow focus
+#shift + alt - n : yabai -m space --create &amp;&amp; \
+#index=&quot;$(yabai -m query --spaces --display | jq &#x27;map(select(.&quot;native-fullscreen&quot; == 0))[-1].index&#x27;)&quot; &amp;&amp; \
+#yabai -m space --focus &quot;${index}&quot;
+
+## destroy desktop
+#cmd + alt - w : yabai -m space --destroy
+
+## fast focus desktop
+#cmd + alt - x : yabai -m space --focus last
+#cmd + alt - z : yabai -m space --focus prev
+#cmd + alt - c : yabai -m space --focus next
+#cmd + alt - 1 : yabai -m space --focus 1
+#cmd + alt - 2 : yabai -m space --focus 2
+#cmd + alt - 3 : yabai -m space --focus 3
+#cmd + alt - 4 : yabai -m space --focus 4
+#cmd + alt - 5 : yabai -m space --focus 5
+#cmd + alt - 6 : yabai -m space --focus 6
+#cmd + alt - 7 : yabai -m space --focus 7
+#cmd + alt - 8 : yabai -m space --focus 8
+#cmd + alt - 9 : yabai -m space --focus 9
+#cmd + alt - 0 : yabai -m space --focus 10
+
+## send window to desktop and follow focus
+#shift + cmd - x : yabai -m window --space last; yabai -m space --focus last
+#shift + cmd - z : yabai -m window --space prev; yabai -m space --focus prev
+#shift + cmd - c : yabai -m window --space next; yabai -m space --focus next
+#shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
+#shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+#shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
+#shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+#shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
+#shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+#shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
+#shift + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
+#shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
+#shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+
+## move window
+#shift + ctrl - a : yabai -m window --move rel:-20:0
+#shift + ctrl - s : yabai -m window --move rel:0:20
+#shift + ctrl - w : yabai -m window --move rel:0:-20
+#shift + ctrl - d : yabai -m window --move rel:20:0
+
+## Swap window
+# hyper - y : yabai -m window --warp west
+# shift + cmd - j : yabai -m window --warp south
+# shift + cmd - k : yabai -m window --warp north
+# hyper - 0x21 : yabai -m window --warp east # &quot;[&quot; key
+
+## focus monitor
+#ctrl + alt - x  : yabai -m display --focus last
+#ctrl + alt - z  : yabai -m display --focus prev || yabai -m display --focus last
+#ctrl + alt - c  : yabai -m display --focus next || yabai -m display --focus first
+#ctrl + alt - 1  : yabai -m display --focus 1
+#ctrl + alt - 2  : yabai -m display --focus 2
+#ctrl + alt - 3  : yabai -m display --focus 3
+
+# Random switch spaces stuff
+##hyper - 1 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;one&#x27; ]]; then yabai -m space --focus two; elif [[ &#x27;{}&#x27; = &#x27;two&#x27; ]]; then yabai -m space --focus one; fi&quot; | yabai -m query --windows --window | jq -re &quot;.id&quot; | xargs -I {} bash -c &quot;yabai -m window --focus {}&quot;;
+#hyper - 2 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;three&#x27; ]]; then yabai -m space --focus four; elif [[ &#x27;{}&#x27; = &#x27;four&#x27; ]]; then yabai -m space --focus three; fi&quot;
+#hyper - 3 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;five&#x27; ]]; then yabai -m space --focus six; elif [[ &#x27;{}&#x27; = &#x27;six&#x27; ]]; then yabai -m space --focus five; fi&quot;
+
+#similar to above
+#hyper - 3 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;five&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 6&#x27;; elif [[ &#x27;{}&#x27; = &#x27;six&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 5&#x27;; fi;&quot;
+#hyper - 2 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;three&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 4&#x27;; elif [[ &#x27;{}&#x27; = &#x27;four&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 3&#x27;; fi;&quot;
+#hyper - 1 : yabai -m query --spaces | jq -re &quot;.[] | select(.visible == 1).label&quot; | xargs -I {} bash -c &quot;if [[ &#x27;{}&#x27; = &#x27;one&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 2&#x27;; elif [[ &#x27;{}&#x27; = &#x27;two&#x27; ]]; then skhd -k &#x27;ctrl + alt + cmd - 1&#x27;; fi;&quot;
+
+#Swtich spaces without system integrtiy disabled
+#hyper - 1 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switch-spaces-1-2.sh
+#hyper - 2 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switch-spaces-3-4.sh
+#hyper - 3 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switch-spaces-5-6.sh
+
+#Swtich spaces without system integrtiy disabled
+# hyper - 3 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 3
+# hyper - 2 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 2
+# hyper - 1 : ./Users/jesseskelton/CustomScripts/SwitchSpaces/switchAndFocus.sh 1
+
+# ## focus window
+# alt - h : yabai -m window --focus west
+# alt - j : yabai -m window --focus south
+# alt - k : yabai -m window --focus north
+# alt - l : yabai -m window --focus east
+
+## set insertion point in focused container
+# ctrl + alt - h : yabai -m window --insert west
+#ctrl + alt - j : yabai -m window --insert south
+#ctrl + alt - k : yabai -m window --insert north
+#ctrl + alt - l : yabai -m window --insert east
+
+#ctrl + alt - h : yabai -m window --insert west
+#ctrl + alt - j : yabai -m window --insert south
+#ctrl + alt - k : yabai -m window --insert north
+#ctrl + alt - l : yabai -m window --insert east
+
+## send window to monitor and follow focus
+#ctrl + cmd - x  : yabai -m window --display last; yabai -m display --focus last
+#hyper - u : $(yabai -m window --display prev yabai -m display --focus prev) || $(yabai -m window --display last yabai -m display --focus last)
+
+## send window to monitor and follow focus
+#hyper - u : $(yabai -m window --display prev) || $(yabai -m window --display last)
+#hyper - p : $(yabai -m window --display next yabai -m display --focus next) || $(yabai -m window --display first yabai -m display --focus first)
+#hyper - p : $(yabai -m window --display next) || $(yabai -m window --display first)
+
+## move window to different monitor
+#ctrl + cmd + alt - l : yabai -m window --display next; yabai -m window --focus next || yabai -m window --display first; yabai -m window --display next || yabai -m config --display first
+#ctrl + cmd + alt - h : yabai -m window --display next || yabai -m window --display first; yabai -m window --display next || yabai -m config --display first
+
+## toggle desktop offset
+#alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+## toggle window parent zoom
+#alt - d : yabai -m window --toggle zoom-parent
+
+#hyper - h : yabai -m query --spaces \
+#| jq -re &quot;.[] | select(.visible == 1).index&quot; \
+#| xargs -I{} yabai -m query --windows --space {} \
+#| jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id&quot; \
+#| xargs -I{} yabai -m window --focus {}
+
+#hyper - o : yabai -m query --spaces \
+#| jq -re &quot;.[] | select(.visible == 1).index&quot; \
+#| xargs -I{} yabai -m query --windows --space {} \
+#| jq -sre &quot;add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.focused == 1))) - 1).display&quot; \
+#| xargs -I{} yabai -m window --display {}
+
+#########################################################################
+#########################################################################
+#########################################################################
+
+#END</code></pre></details></li></ul><ul id="da4b0b86-d734-49bd-897c-d737e4a3c3fe" class="toggle"><li><details open=""><summary>Example Config</summary><blockquote id="9463f6db-8999-4541-90a7-5cf8987bbd27" class="">Config from here : <a href="https://github.com/koekeishiya/yabai/blob/master/examples/skhdrc">https://github.com/koekeishiya/yabai/blob/master/examples/skhdrc</a></blockquote><pre id="d5a26fb9-4dab-4733-bfcb-a004e89f1c6a" class="code"><code># ################################################################ #
+# THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
+# FOR SIMPLE EXAMPLE MAPPINGS LOOK FURTHER DOWN THIS FILE..        #
+# ################################################################ #
+
+# A list of all built-in modifier and literal keywords can
+# be found at https://github.com/koekeishiya/skhd/issues/1
+#
+# A hotkey is written according to the following rules:
+#
+#   hotkey       = &lt;mode&gt; &#x27;&lt;&#x27; &lt;action&gt; | &lt;action&gt;
+#
+#   mode         = &#x27;name of mode&#x27; | &lt;mode&gt; &#x27;,&#x27; &lt;mode&gt;
+#
+#   action       = &lt;keysym&gt; &#x27;[&#x27; &lt;proc_map_lst&gt; &#x27;]&#x27; | &lt;keysym&gt; &#x27;-&gt;&#x27; &#x27;[&#x27; &lt;proc_map_lst&gt; &#x27;]&#x27;
+#                  &lt;keysym&gt; &#x27;:&#x27; &lt;command&gt;          | &lt;keysym&gt; &#x27;-&gt;&#x27; &#x27;:&#x27; &lt;command&gt;
+#                  &lt;keysym&gt; &#x27;;&#x27; &lt;mode&gt;             | &lt;keysym&gt; &#x27;-&gt;&#x27; &#x27;;&#x27; &lt;mode&gt;
+#
+#   keysym       = &lt;mod&gt; &#x27;-&#x27; &lt;key&gt; | &lt;key&gt;
+#
+#   mod          = &#x27;modifier keyword&#x27; | &lt;mod&gt; &#x27;+&#x27; &lt;mod&gt;
+#
+#   key          = &lt;literal&gt; | &lt;keycode&gt;
+#
+#   literal      = &#x27;single letter or built-in keyword&#x27;
+#
+#   keycode      = &#x27;apple keyboard kVK_&lt;Key&gt; values (0x3C)&#x27;
+#
+#   proc_map_lst = * &lt;proc_map&gt;
+#
+#   proc_map     = &lt;string&gt; &#x27;:&#x27; &lt;command&gt; | &lt;string&gt;     &#x27;~&#x27; |
+#                  &#x27;*&#x27;      &#x27;:&#x27; &lt;command&gt; | &#x27;*&#x27;          &#x27;~&#x27;
+#
+#   string       = &#x27;&quot;&#x27; &#x27;sequence of characters&#x27; &#x27;&quot;&#x27;
+#
+#   command      = command is executed through &#x27;$SHELL -c&#x27; and
+#                  follows valid shell syntax. if the $SHELL environment
+#                  variable is not set, it will default to &#x27;/bin/bash&#x27;.
+#                  when bash is used, the &#x27;;&#x27; delimeter can be specified
+#                  to chain commands.
+#
+#                  to allow a command to extend into multiple lines,
+#                  prepend &#x27;\&#x27; at the end of the previous line.
+#
+#                  an EOL character signifies the end of the bind.
+#
+#   -&gt;           = keypress is not consumed by skhd
+#
+#   *            = matches every application not specified in &lt;proc_map_lst&gt;
+#
+#   ~            = application is unbound and keypress is forwarded per usual, when specified in a &lt;proc_map&gt;
+#
+# A mode is declared according to the following rules:
+#
+#   mode_decl = &#x27;::&#x27; &lt;name&gt; &#x27;@&#x27; &#x27;:&#x27; &lt;command&gt; | &#x27;::&#x27; &lt;name&gt; &#x27;:&#x27; &lt;command&gt; |
+#               &#x27;::&#x27; &lt;name&gt; &#x27;@&#x27;               | &#x27;::&#x27; &lt;name&gt;
+#
+#   name      = desired name for this mode,
+#
+#   @         = capture keypresses regardless of being bound to an action
+#
+#   command   = command is executed through &#x27;$SHELL -c&#x27; and
+#               follows valid shell syntax. if the $SHELL environment
+#               variable is not set, it will default to &#x27;/bin/bash&#x27;.
+#               when bash is used, the &#x27;;&#x27; delimeter can be specified
+#               to chain commands.
+#
+#               to allow a command to extend into multiple lines,
+#               prepend &#x27;\&#x27; at the end of the previous line.
+#
+#               an EOL character signifies the end of the bind.
+
+# ############################################################### #
+# THE FOLLOWING SECTION CONTAIN SIMPLE MAPPINGS DEMONSTRATING HOW #
+# TO INTERACT WITH THE YABAI WM. THESE ARE SUPPOSED TO BE USED AS #
+# A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
+# ############################################################### #
+
+# focus window
+# alt - h : yabai -m window --focus west
+
+# swap managed window
+# shift + alt - h : yabai -m window --swap north
+
+# move managed window
+# shift + cmd - h : yabai -m window --warp east
+
+# balance size of windows
+# shift + alt - 0 : yabai -m space --balance
+
+# make floating window fill screen
+# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+
+# make floating window fill left-half of screen
+# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+
+# create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
+# shift + cmd - n : yabai -m space --create &amp;&amp; \
+#                   index=&quot;$(yabai -m query --spaces --display | jq &#x27;map(select(.&quot;native-fullscreen&quot; == 0))[-1].index&#x27;)&quot; &amp;&amp; \
+#                   yabai -m window --space &quot;${index}&quot; &amp;&amp; \
+#                   yabai -m space --focus &quot;${index}&quot;
+
+# fast focus desktop
+# cmd + alt - x : yabai -m space --focus recent
+# cmd + alt - 1 : yabai -m space --focus 1
+
+# send window to desktop and follow focus
+# shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
+# shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+
+# focus monitor
+# ctrl + alt - z  : yabai -m display --focus prev
+# ctrl + alt - 3  : yabai -m display --focus 3
+
+# send window to monitor and follow focus
+# ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
+# ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
+
+# move floating window
+# shift + ctrl - a : yabai -m window --move rel:-20:0
+# shift + ctrl - s : yabai -m window --move rel:0:20
+
+# increase window size
+# shift + alt - a : yabai -m window --resize left:-20:0
+# shift + alt - w : yabai -m window --resize top:0:-20
+
+# decrease window size
+# shift + cmd - s : yabai -m window --resize bottom:0:-20
+# shift + cmd - w : yabai -m window --resize top:0:20
+
+# set insertion point in focused container
+# ctrl + alt - h : yabai -m window --insert west
+
+# toggle window zoom
+# alt - d : yabai -m window --toggle zoom-parent
+# alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle window split type
+# alt - e : yabai -m window --toggle split
+
+# float / unfloat window and center on screen
+# alt - t : yabai -m window --toggle float;\
+#           yabai -m window --grid 4:4:1:1:2:2
+
+# toggle sticky(+float), topmost, picture-in-picture
+# alt - p : yabai -m window --toggle sticky;\
+#           yabai -m window --toggle topmost;\
+#           yabai -m window --toggle pip</code></pre></details></li></ul><p id="8cd07abd-2a78-4afd-a971-f187750f2d27" class="">
+</p></details></li></ul></details></li></ul><ul id="aac7195d-8915-47fa-95ed-ab085285836b" class="toggle"><li><details open=""><summary>Limelight config</summary><ul id="e1190fdb-b5e8-4b6b-951c-b83bf1a7fcc7" class="toggle"><li><details open=""><summary>Where to put the config file?</summary><pre id="9debc999-8928-483e-b618-c91f114f33ab" class="code"><code># The per-user yabai configuration file must be executable;
+# it is just a shell script that&#x27;s ran before limelight launches.
+# It can be placed at anywhere you want .. Ex. :
+
+$HOME/.config/limelight/limelightrc</code></pre></details></li></ul><ul id="b7d86522-e51c-4333-9a47-2db27ae7d174" class="toggle"><li><details open=""><summary>How to make the config file?</summary><pre id="bae3ddb0-d8f3-4cd1-acee-13ae2452d748" class="code"><code># create empty configuration file and make it executable
+touch ~/.config/limelight/limelightrc
+chmod +x ~/.config/limelight/limelightrc</code></pre></details></li></ul><ul id="c00adc56-d616-4052-85a4-08a0aaf7aaed" class="toggle"><li><details open=""><summary>Put some stuff in your config file</summary><ul id="16a96783-15f0-489b-9cd2-3686c348f40e" class="toggle"><li><details open=""><summary>My Personal Config</summary><pre id="9f56a819-94e4-4ce1-a4ce-3069adbdeb05" class="code"><code>#!/usr/bin/env sh
+
+limelight -m config width 3
+limelight -m config radius 10
+limelight -m config placement exterior
+limelight -m config active_color 0xFF40FF00
+limelight -m config normal_color 0x00FFFFFF
+
+echo &quot;limelight configuration loaded..&quot;</code></pre></details></li></ul></details></li></ul></details></li></ul><p id="eeab85c3-b801-45ab-af81-3bc19868af6c" class="">* <strong>All of the configuration options can be changed at runtime as well.</strong></p></details></li></ul><ul id="c1c0108d-bab6-415c-8b50-3d3668d51c07" class="toggle"><li><details open=""><summary>Additional Mac System Settings</summary><ul id="7c311d65-62cb-4132-9bd9-a1e714ea6ffe" class="toggle"><li><details open=""><summary>Create less delay when switching spaces ( Only needed if SIP is Enabled )</summary><p id="7c717090-549d-4a34-a8c8-a0e1a3eafa20" class="">Navigate to : <code>System Preferences &gt; Accessibility &gt; Display</code></p><ul id="562874c6-70d3-4830-be6d-5a8383c065e6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Make sure &quot;<em>Reduce Motion</em>&quot; is <code>selected</code>.</span></li></ul><figure id="db165813-4bb1-494f-b6d9-d7cd52b84b09" class="image"><a href="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled%202.png"><img style="width:780px" src="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled%202.png"/></a></figure></details></li></ul><ul id="d0e6e3ec-e860-4754-a33e-52d0bb7f1d48" class="toggle"><li><details open=""><summary>Mission Control Settings for Yabai</summary><p id="e103ac49-f52b-40c8-93c6-bb85bd401bf1" class="">Navigate to : <code>System Preferences &gt; Mission Control</code></p><ul id="a7b88da4-cb8a-4d21-be84-e45246da95f0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In the Mission Control preferences pane in System Preferences, the setting &quot;<em>Displays have separate Spaces</em>&quot; must be <code>enabled</code>.</span></li></ul><ul id="1db5224c-5e03-451f-8129-f26568fecc1f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In the Mission Control preferences pane in System Preferences, the setting &quot;<em>Automatically rearrange Spaces based on most recent use</em>&quot; should be <code>disabled</code> for commands that rely on the ordering of spaces to work reliably.</span></li></ul><figure id="115c44a3-1e6d-4d3c-8778-b206a5c3615c" class="image"><a href="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled.png"><img style="width:780px" src="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled.png"/></a></figure></details></li></ul></details></li></ul></details></li></ul><ul id="e45edc7b-14ba-4cd6-898f-e79f12be423b" class="toggle"><li><details open=""><summary>Start everything!</summary><pre id="c8ef50ba-b999-4c99-88b4-45f586614880" class="code"><code><strong>--------------------------------------
+# Will automatically start Yabai when computer starts
+brew services start yabai
+# Will automatically start skhd when computer starts
+brew services start skhd
+--------------------------------------
+
+# You may need to </strong>run &#x27;killall Dock&#x27; to load the scripting addition.
+killall Dock</code></pre></details></li></ul><ul id="134fa8f8-ea0c-4f4b-adb4-9b5ddedb46db" class="toggle"><li><details open=""><summary>Enjoy</summary><figure id="0a8f861f-19a9-4b6a-b651-47acc09edc3c" class="image"><a href="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled%201.png"><img style="width:860px" src="Yabai%20Video%20ff76a54ade19411caa735e4f82a9071f/Untitled%201.png"/></a></figure></details></li></ul></details></li></ul><hr id="499bd02b-74ba-42fd-ad2a-615b1e9cb778"/><p id="502f5e61-02f5-4b94-937a-1c808e88b152" class="">*  Be sure to allow any accessibility permissions that popup durning the process</p></details></li></ul></details></li></ul><ul id="5f6f665a-ff80-4ccd-8934-8c665f62f3bf" class="toggle"><li><details open=""><summary>Tips and Tricks</summary><ul id="7ce652a8-66cd-4db2-ab74-425039a47919" class="bulleted-list"><li>Restart Yabai with Ctrl + Cmd + Alt - r</li></ul><ul id="5e07a014-38e5-4c34-b1cf-1fb660f3ff59" class="bulleted-list"><li>Write scripts to do things Yabai can&#x27;t by default</li></ul><ul id="69a07020-07e2-4273-ba16-6691e4b999b2" class="bulleted-list"><li>Use Skhd for more than just Yabai</li></ul><ul id="fd51269a-9eaf-48d7-bf8b-a0495c2a5400" class="bulleted-list"><li></li></ul><p id="1cdd9650-83a1-4fd3-b87f-2d7da3491cac" class="">
+</p></details></li></ul><p id="87e2913b-4265-4d5a-b709-b45d0bdd9791" class="">
+</p><hr id="9931dc84-dbe0-4476-801b-7fe745656caa"/><p id="195a26a9-c53d-4daf-980b-7c132ffa907d" class="">
+</p><p id="270ac8dd-f631-409f-a859-fdb4098b80f6" class="">
+</p><ul id="ba868ff7-0741-4722-a5f5-adae744b2f2b" class="toggle"><li><details open=""><summary>overview/demo</summary><p id="48b6eac8-4ef7-450c-b956-b8e27266bec8" class=""><a href="https://www.bluem.net/en/projects/cliclick/">https://www.bluem.net/en/projects/cliclick/</a> &gt;&gt; shell terminal joke funny</p><p id="b9509bd3-5002-4a41-8632-df5ffbc93a51" class="block-color-teal_background">Okay, lets take a look at a quck demo to see if you want to actually watch this entire video.</p><p id="0d5113c7-8549-4884-97d3-40d54fdf01af" class="block-color-teal_background">So, yabai is a tiling window manager. It basically expands and resizes all of you application windows automatically. So for example, if I open My browser, it&#x27;ll be full screen. </p><p id="963275bf-173b-4350-94be-584571bf0e7f" class="block-color-teal_background">Cool. </p><p id="f1313c3d-a545-4635-91ce-7fa88ee42ea6" class="block-color-teal_background">No if I open notion on the same monitor, its going to split the available space in to 2, 50-50. It&#x27;s managing the resizing of my windows. </p><p id="8f39c93a-1741-4517-950b-fbdeb01fc6f1" class="block-color-teal_background">And if i keep opening apps, it&#x27;s going to keep splitting the space. That&#x27;s how it works. </p><p id="30cf41b4-6468-4c99-91fd-381538e45d7b" class="block-color-teal_background">But if you have too many things on one monitor, it becomes a little annoyting. So, it can also manage spaces.</p><p id="60d1f612-8151-4742-82ce-0e1751d39941" class="block-color-teal_background">I have mine to set up to swtich spaces per monitor with hyper + 123. So For monitor 2, I have hyper + 2 to swtich between the two spaces I have set up for monitor 2.</p><p id="17a25ca5-e076-46f6-9b49-4659d77193af" class="block-color-teal_background">I also have a shortcut to move a window to the next space on a monitor. So hyper  + alt + 2 would move this window to space  4. </p><p id="2efd5953-677b-4049-82dd-964e68680880" class="block-color-teal_background">Lets move this back to it&#x27;s original space. </p><p id="4019e9ca-c9f0-47a2-9c14-c40c0075169f" class="block-color-teal_background">You can also resize windows with shortcuts but I rarely need to do that and if I do I just use my mouse. Yabai will make sure to resize the other app to fill the rest of the available space. </p><p id="7089ceae-e483-4a92-b91d-f662603a6285" class="block-color-teal_background">This is how an operating system sould be by default in my opinion. You should never have to resize and have windows behind other windows. But what do I know?</p><p id="4a8da181-61d0-4cd0-bc55-b0555bed1eb6" class="block-color-teal_background">You can also move focus to other windows via shortcuts. Hyper + IO (left and right). </p><p id="2e59e04e-bec8-455b-ae27-e2058ff1f786" class="block-color-teal_background">Umm, you can also move windows to different monitors. Hyper + UP. </p><p id="addf3df6-2dc9-43a6-9649-047b6311e49a" class="block-color-teal_background">You can also customize which windows are managed my Yabai by editing the configuration file. I set mine up so that Spotify will not be managed. So it works like it did before yabai was installed.</p><p id="297a95d3-886d-4021-85ed-c9e3b76cdd4d" class="block-color-teal_background">I close windows with hyper + backspace as well.</p><p id="80bca8ba-90a6-42b6-8efe-d14a4de048b6" class="block-color-teal_background">One other feature they added a couple weeks ago is stacks. you can Stack windows. Pretty cool.</p><p id="4f1278c5-c29e-4df5-b7a8-7f7640e0f7fb" class="">Those are main features I use. Now if you&#x27;re still interested, lets go over how to install it. </p><p id="b13dc6f3-677e-4d3e-87c8-d667c1d73918" class="block-color-brown_background">You&#x27;re going to need home-brew, if you don&#x27;t know what home-brew is, I made a video going over the basics, check it out in the description. Run this command in you terminal. Great. </p><p id="f9db2829-3478-42fb-8185-4f4df9f21451" class="block-color-brown_background">Now we have to install the scripting add-on which is needed to do some of the magic. Run this, enter your password. </p><p id="3ca6aebf-a580-4833-bb3b-a65eff9822d3" class="block-color-brown_background">Great! Not it&#x27;s installed! But, you have not configuration setup so all it can do is resize your windows for you.</p><p id="9e872f10-dd91-43fe-872e-2f1aefacab97" class="block-color-brown_background"> You need to create a configuration file and add some logic in there.</p></details></li></ul><ul id="bf60c985-394e-4f1f-a2b6-218cceb018cb" class="toggle"><li><details open=""><summary>Options</summary><ol id="75c5c275-65de-467a-b3e2-4e92df7bed33" class="numbered-list" start="1"><li>Magnets - A basic window manager I used to use. Super simple. Manual.</li></ol><ol id="94df218d-3a76-4b71-9e10-270ea176890d" class="numbered-list" start="2"><li>Amethyst - good for a lot of people just getting into bsp window managers. Much easier, but less features/openness. </li></ol><ol id="5bd6a0bc-002a-464b-93c5-b833de739a24" class="numbered-list" start="3"><li>Yabai (originally chunkwm) -  Super powerful and customizable. Much more advanced.  But, a good way to learn some useful skills along the way. Using Terminal tools, editing config files, setting up hotkeys using skhd. You have access to basically all the yabai commands via the terminal so can use those to create custom shortcuts or write your own scripts to do anything.<ul id="7c6ae806-b3be-473b-bf4f-ef242595f36c" class="toggle"><li><details open=""><summary>skhd</summary><p id="fea751b6-fe80-4951-aab0-088198a06170" class="">key codes &gt;&gt; <a href="https://github.com/koekeishiya/skhd/issues/1">https://github.com/koekeishiya/skhd/issues/1</a> &gt;&gt;<code> hyper (cmd + shift + alt + ctrl)</code></p><p id="f5c5c647-25e8-4fb4-9837-aa91db7e23a0" class="">skhd --observe &gt;&gt; for getting key-codes</p><p id="0bc33d63-15d0-4536-9182-6446d5be7fcc" class="">That&#x27;s all for now, i don&#x27;t have time to go over everything this can do.</p></details></li></ul><ul id="344079bc-5a4c-4dc5-8c9b-25a348b51878" class="toggle"><li><details open=""><summary>limelight</summary><p id="6f328e86-d442-43dc-bc42-f444e28c0298" class="">easy peasy</p></details></li></ul><ul id="3dbbf685-7f94-4b34-969f-dc22cbe71f5b" class="toggle"><li><details open=""><summary>spacebar</summary></details></li></ul><ul id="b0282f46-4e7b-4f7d-8a95-de388db740c9" class="toggle"><li><details open=""><summary>karabiner </summary><p id="99f81118-a14d-434a-a1d9-30fb56174bea" class="">for hyper key</p><ol id="428393be-d1ed-4e2b-ade1-625d1d0d5bcf" class="numbered-list" start="1"><li>If you have issues, be sure to check that in System Preferences-&gt;Keyboard-&gt;Modifier Keys you’ve disabled Caps Lock (set it to No Action). Note that if you use multiple keyboards (like the internal laptop one and an external Bluetooth one), that screen will have a dropdown where you’ll need to set this for each available keyboard. Also ensure that you don’t have any “simple modifications” set in Karabiner Elements that would be trapping the Caps Lock key.</li></ol><ol id="2510a3bc-f0a5-4b40-8bab-618403de020e" class="numbered-list" start="2"><li></li></ol><ol id="011ab65e-b733-49be-b3a0-89f6b82ee077" class="numbered-list" start="3"><li></li></ol><h2 id="9c244fbb-f950-4681-bac5-f64a00890ea9" class="">Faster key repeat</h2><p id="59d18b8b-f6b7-43b6-8c59-58ab06eb3c9a" class="">OS X defaults to a very slow key repeat rate, but it also doesn’t let you lower it enough to please me in System Preferences. This often comes in handy for moving short distances in text.</p><h3 id="eb899981-fbf4-4ad2-98c4-974d40f2c8d4" class="">Setup</h3><p id="fa94aed5-ad24-498d-b291-15582d977215" class="">You can customize this by running commands in your Terminal.</p><p id="0eda24ee-b78d-4fc8-89ee-db732b7fa24b" class="">Here are the settings I use, that I got from somewhere online (fractional values do not work). You may need to log out and back in to see them applied.</p><p id="059b557e-2f13-43f5-a972-23558a455052" class=""><code>defaults write -g InitialKeyRepeat -int 10 </code><code><em># normal minimum is 15 (225 ms)</em></code><code>
+defaults write -g KeyRepeat -int 1 </code><code><em># normal minimum is 2 (30 ms)</em></code></p></details></li></ul></li></ol><p id="3ce9d7b2-61ba-4835-8bdd-8e50d2bcaab4" class="">
+</p></details></li></ul><p id="3387b3b4-42d4-4a9a-9cd1-2c7e8409a6dc" class="">
+</p><p id="884eedd3-850e-4380-943d-1dfe61967c50" class="">
+</p><ul id="c07ddd81-b7ba-4d59-b149-ac72489ce0ba" class="toggle"><li><details open=""><summary>todo for publish</summary><ul id="0c780cff-37b2-4571-aa7f-15e310fa03e6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create website and link it to github pages</span></li></ul><ul id="af037fe6-7627-4e81-88e7-1725a8e493a6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Record </span></li></ul><ul id="b290e2b5-d8eb-472d-969b-2ae23ce4edb2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Upload</span></li></ul></details></li></ul><p id="e775ac72-17ae-4f85-a540-ef54970a1739" class="">
+</p><p id="784964c7-6b03-48f3-8106-c478e5d0561a" class="">
+</p><p id="224e1aeb-6eff-44b6-bdfa-9ff173748ddf" class="">
+</p><p id="6353c4df-2399-48d7-8135-283a9109fdf8" class="">
+</p><p id="f2d90d76-3072-4e30-96a8-74947dad874c" class="">
+</p><p id="8ed38f83-c19d-4cb1-8c58-86b268222de7" class="">
+</p><p id="41c1e875-6e8a-45a7-8d63-1fc19554eb19" class="">
+</p><p id="35c59069-0945-42ff-a3e6-b893325a5b80" class="">
+</p><p id="cee7941e-5ff1-45b9-860e-b88a320ebc4a" class="">
+</p><p id="743b01fa-abfd-45e2-b3b0-7e94914b3300" class="">
+</p><p id="b741169d-148d-4b6d-a257-fc9d3cc8c649" class="">
+</p></div></article></body></html>
